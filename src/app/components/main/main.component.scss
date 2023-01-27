@@ -1,0 +1,40 @@
+.schedule-title {
+    font-size: larger;
+    font-weight: bolder;
+    color: rgb(21, 211, 21);
+}
+
+.scheduled-item {
+    font-size: medium;
+    font-weight: 800;
+}
+
+.scheduled-details {
+    margin-left: 6%;
+    color: rgb(21, 211, 21);
+}
+
+.scheduled-category {
+    margin-left: 3%;
+    font-weight: 500;
+}
+
+.scheduled-priority {
+    margin-left: 30px;
+}
+
+.scheduled-delete {
+    float: right;
+    color: gray;
+}
+
+mat-hint {
+    float: left;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.form-title {
+    font-size: larger;
+    font-weight: bolder;
+    color: rgb(71, 20, 168);
+}
