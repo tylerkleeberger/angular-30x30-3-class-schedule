@@ -1,7 +1,9 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Item } from './items';
+import { ITEMS_ENVIRONMENT } from '../items.token';
+import { ItemEnvironment } from '../item.model';
 
-const BASE_URL = 'http://localhost:3000'
 
 
 @Injectable({
@@ -11,15 +13,16 @@ export class MethodService {
 
   model = 'items'
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,
+    @Inject(ITEMS_ENVIRONMENT) private environment: ItemEnvironment) { }
 
-  private getUrl() {
-    return `${BASE_URL}/${this.model}`;
-  }
-
-  private getUrlWithID(id) {
-    return `${this.getUrl()}/${id}`;
-  }
+    private getUrl() {
+      return `${this.environment.apiUrl}${this.model}`;
+    }
+  
+    private getUrlWithID(id) {
+      return `${this.getUrl()}/${id}`;
+    }
 
   all() {
     return this.http.get(this.getUrl());
